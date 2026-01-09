@@ -1,186 +1,169 @@
-# 📊 Digital Marketing Campaign Engagement Prediction
+---
 
-### Machine Learning Analysis (Master’s Thesis)
+# 📊 Digital Marketing Campaign Performance Analysis
+
+### Machine Learning–Based Predictive Analytics (Master’s Thesis)
 
 ---
 
 ## 📌 Project Overview
 
-This repository contains the **machine learning implementation** developed as part of the Master’s Thesis:
+This repository contains the **machine learning analysis** conducted as part of the Master’s thesis:
 
 **“Analyzing Digital Marketing Campaign Performance Using Data-Driven Analytics and Machine Learning.”**
 
-The project investigates whether **social media campaign engagement rates** can be analysed and predicted using historical digital marketing data.
-All analysis, modelling, and visualisation are performed **entirely in Python using a Jupyter Notebook**.
+The study investigates whether **social media campaign engagement rates** can be modelled using historical campaign data and machine learning techniques.
+Rather than producing deterministic forecasts, the work focuses on **evaluating predictive feasibility**, **understanding limitations**, and **supporting data-driven decision-making** in digital marketing contexts.
 
-The aim of this work is to demonstrate a **data-driven, predictive analytics workflow** suitable for academic research in digital marketing analytics.
+All analysis, modelling, and visualisation are implemented in **Python using a Jupyter Notebook**.
 
 ---
 
 ## 🎯 Research Objectives
 
-* Analyse historical digital marketing campaign data
-* Predict **engagement rate** using machine learning models
-* Compare baseline, linear, and non-linear models
-* Evaluate model performance and limitations
-* Generate analytical and diagnostic visualisations to support findings
+The primary objectives of this study are:
+
+* To analyse patterns and drivers of social media engagement across digital marketing campaigns
+* To evaluate whether engagement rate can be predicted using machine learning models
+* To compare baseline regression models with more advanced ensemble approaches
+* To assess model performance using standard evaluation metrics (R², RMSE, MAE)
+* To interpret predictive results cautiously within a **decision-support framework**
 
 ---
 
-## 📂 Dataset
-
-**Social Media Engagement Dataset**
-Source: Kaggle – Social Media / Digital Marketing Engagement Dataset
-
-* File used in this project:
-  `social_media_engagement_data_cleaned.csv`
-* The dataset contains campaign, platform, sentiment, and engagement-related features
-* Data is provided in cleaned form and loaded directly into the notebook
-
----
-
-## 🧠 Machine Learning Approach
+## 🧠 Machine Learning Methodology
 
 ### Models Implemented
 
-* **Baseline Model:** Dummy Regressor (mean strategy)
-* **Linear Model:** Ridge Regression
-* **Non-Linear Models:**
+The notebook evaluates multiple regression-based models, including:
 
-  * Random Forest Regressor
-  * Gradient Boosting Regressor
+* Linear Regression (baseline)
+* Ridge Regression
+* Lasso Regression
+* Random Forest Regressor
+* Gradient Boosting Regressor
 
-Models are evaluated to assess **predictive feasibility** rather than to produce deterministic forecasts.
-
----
-
-## ⚙️ Methodology
-
-### Data Preprocessing
-
-* Handling missing values using **SimpleImputer**
-* Feature scaling using **StandardScaler**
-* Encoding categorical variables using **OneHotEncoder**
-* End-to-end preprocessing using **Pipeline** and **ColumnTransformer**
-
-### Target Variable
-
-* `engagement_rate`
-* Normalised to a **0–1 range** prior to model training
-
-### Evaluation Metrics
-
-* Mean Absolute Error (MAE)
-* Root Mean Squared Error (RMSE)
-* R² Score
-
-Cross-validation and hyperparameter tuning are applied to demonstrate **pipeline improvement attempts**.
+Model selection and comparison are used to assess **relative performance**, not to claim algorithmic novelty.
 
 ---
 
-## 📊 Machine Learning Outputs
+## ⚙️ Data Processing & Evaluation
 
-All results and figures are generated **directly within the notebook** when executed.
+Key methodological steps include:
 
-Key outputs include:
+* Exploratory Data Analysis (EDA)
+* Feature engineering based on marketing theory (e.g., interaction and intensity measures)
+* Handling missing values and categorical variables
+* Feature scaling and multicollinearity checks
+* Model evaluation using:
 
-* Feature distribution analysis
-* Correlation analysis
-* Sentiment and emotion-based engagement analysis
-* Model performance comparison
-* Actual vs predicted engagement rate plots
-* Regression diagnostics
-* Exploratory feature importance analysis
+  * R² Score
+  * Root Mean Squared Error (RMSE)
+  * Mean Absolute Error (MAE)
+* Cross-validation and hyperparameter tuning for model refinement
 
-These figures support the **Results and Discussion** section of the thesis.
+---
+
+## 📊 Key Findings
+
+The main findings of the study are:
+
+* Social media engagement exhibits **high variability and non-linear behaviour**
+* Baseline linear models show limited explanatory power
+* Ensemble models (particularly Random Forest) perform better in capturing interaction effects
+* Even high-performing models must be interpreted cautiously due to data noise and behavioural uncertainty
+* Predictive models are more suitable for **relative comparison and decision support** than precise forecasting
 
 ---
 
 ## 🗂️ Repository Structure
 
 ```
-├── digital_marketing_campaign_ml_Raja_Santhosh.ipynb   # Machine learning implementation
-├── social_media_engagement_data_cleaned.csv            # Dataset used for analysis
-├── README.md                                           # Project documentation
+├── digital_marketing_campaign_ml_Raja_Santhosh_Thesis.ipynb
+│   └── Complete machine learning analysis and visual outputs
+│
+├── Social Media Engagement Dataset.csv
+│   └── Dataset used for the study
+│
+├── README.md
+│   └── Project documentation
 ```
 
 ---
 
-## 🛠️ Requirements
+## 📂 Dataset Information
 
-* Python 3.8+
-* Jupyter Notebook or Google Colab
-
-### Key Libraries
-
-* numpy
-* pandas
-* scikit-learn
-* matplotlib
-* seaborn
+* **Dataset Name:** Social Media Engagement Dataset
+* **Source:** Kaggle
+* **Description:**
+  The dataset contains synthetic yet realistic records of social media posts across multiple platforms, campaign phases, sentiment types, and engagement metrics. It is designed to support exploratory and predictive analysis in digital marketing research.
 
 ---
 
-## ▶️ Steps to Run the Project
+## 🛠️ Python Libraries Used
 
-### 1. Clone this repository
+The analysis uses the following Python libraries:
+
+```
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+scipy
+statsmodels
+```
+
+These libraries support data manipulation, modelling, statistical diagnostics, and visualisation.
+
+---
+
+## ▶️ How to Run the Analysis
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/Rajarj16/digital_marketing_campaign_ml_Raja_Santhosh_Thesis.git
 cd digital_marketing_campaign_ml_Raja_Santhosh_Thesis
 ```
 
----
-
-### 2. Open the notebook
+2. Open the notebook:
 
 ```bash
-jupyter notebook digital_marketing_campaign_ml_Raja_Santhosh.ipynb
+jupyter notebook digital_marketing_campaign_ml_Raja_Santhosh_Thesis.ipynb
 ```
 
----
-
-### 3. Run the notebook
-
-* Run all cells **sequentially from top to bottom**
-* The notebook will:
-
-  * Load and preprocess the dataset
-  * Train and evaluate multiple ML models
-  * Generate analytical and diagnostic visualisations
-
-> All figures are produced dynamically within the notebook.
+3. Run all cells sequentially to reproduce the analysis and figures.
 
 ---
 
-## 📈 Key Findings (Summary)
+## 🚀 Future Enhancements
 
-* Engagement-rate prediction is challenging due to behavioural variability
-* Non-linear models outperform linear baselines on this dataset
-* Predictive analytics can support **decision-making**, but not exact forecasting
-* Model diagnostics highlight limitations and assumptions of regression-based approaches
+Consistent with the thesis discussion, potential future work includes:
+
+* Validation using real-world social media data
+* Time-based modelling of engagement trends
+* Exploration of additional non-linear models
+* Integration of text-based features from post content
+* Further analysis of platform-specific behavioural effects
 
 ---
 
 ## 🔒 Ethical Considerations
 
-* Dataset does not contain personally identifiable information (PII)
-* Data is used strictly for academic research purposes
-* Analysis complies with academic integrity requirements
+* The dataset is publicly available and synthetic
+* No personally identifiable information (PII) is included
+* The analysis is conducted solely for academic research purposes
 
 ---
 
-## 🚀 Future Work
+## 👤 Authors
 
-* Incorporate richer feature engineering
-* Explore time-series based engagement prediction
-* Evaluate deployment-oriented machine learning pipelines
+**Raja Ramaraj**
 
----
+**Santhosh Selvan**
 
-## 👤 Author
-
-**Raja Ramaraj and Santhosh Selvan**
-Master’s Thesis – Digital Marketing Analytics / Data Analytics
+Master’s Thesis
+MSc Data Science / Digital Analytics
 
 ---
